@@ -1,20 +1,45 @@
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700|Teko:300,400,500,600,700');
+body {
+	font-family: Roboto;
+	font-weight: 400;
+}
 .card {
 	width: 300px;
 	height: 419px;
-/*	background-image: url(01001.jpg);*/
 	position: relative;
 	font-family: Roboto;
 	overflow: hidden;
 	border-radius: 20px;
 	border-style: solid;
 	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
-	background-color: white;
+	background: white;
 	margin: 10px;
 	float: left;
+	z-index: -1;
 }
+
+.template {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.template_text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+}
+
+
 .illustration {
-	background-position: 20px 8px;
+	background: url() 20px 8px;
 	width: 335px;
 	position: absolute;
 	border-radius: 0 0 50% 50%;
@@ -23,7 +48,7 @@
 	right: -20px;
 	border: 5px solid #e60a0a;
 	box-shadow: 0 2px 25px rgba(255, 21, 3, 0.53);
-	
+	z-index: -1;
 }
 
 .blue .illustration {
@@ -51,16 +76,25 @@
 	text-align: center;
 	font-weight: bold;
 	top: 22px;
-	right: 15px;
-	padding-top: 7px;
-	padding-bottom: 2px;
-	width: 53px;
+	right: 14px;
+	padding-top: 5px;
+	padding-bottom: 0;
+	width: 48px;
 	font: 30px Teko;
 	font-weight: 700;
 	opacity: 1;
+	border-color: white;
+	border-style: solid;
+	border-top-style: dotted;
+	border-bottom-style: dotted;
 }
 
-
+.flavor {
+	font-size: 11px;
+	font-style: italic;
+	display: inline-block;
+	margin-top: 5px;
+}
 
 .cost {
 	position: absolute;
@@ -70,25 +104,30 @@
 	border-radius: 50%;
 	text-align: center;
 	font-weight: bold;
-	border: 2px solid black;
-	top: 16px;
-	width: 54px;
-	font: 30px/59px Teko;
+	border: 3px solid black;
+	top: 17px;
+	width: 52px;
+	font: 30px/57px Teko;
 	font-weight: 700;
 	opacity: 1;
 	left: 6px;
-	height: 55px;
 	padding-left: 2px;
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	height: 52px;
 }
 
 .cost svg {
 	fill: black;
 	stroke: black;
-	vertical-align: baseline;
-	min-width: 24px;
+	min-width: 31px;
 	min-height: auto;
-	max-height: 21px;
-	margin: 0 0 0 -3px;
+	max-height: 26px;
+	margin-right: -3px;
+	margin-bottom: 0;
+	margin-left: -3px;
+	position: relative;
+	top: 13px;
 }
 
 .character .cost {
@@ -98,20 +137,21 @@
 .title {
 	z-index: 2;
 	float: left;
-	background-color: white;
 	display: block;
 	position: absolute;
-	font: 21px/25px Teko;
+	font: 21px/19px Teko;
 	text-transform: uppercase;
 	text-align: center;
-	top: 11px;
-	border: 2px solid black;
+	top: 19px;
 	opacity: 1;
 	left: 69px;
 	width: 154px;
-	padding-bottom: 6px;
-	padding-top: 2px;
 	border-radius: 0 0 10 10;
+}
+
+.title.oneline {
+	line-height: 37px;
+
 }
 
 .title .Y {
@@ -119,7 +159,7 @@
 .subtitle {
 	font-size: 17px;
 	font-weight: 300;
-	line-height: 4px;
+	line-height: 14px;
 }
 
 .points {
@@ -131,9 +171,13 @@
 	border-radius: 0 6 6 0;
 	text-align: center;
 	bottom: 4px;
-	font-weight: 700;
 	border-left-style: none;
 	padding-left: 2px;
+	padding-bottom: 0;
+	font-family: teko;
+	font-weight: 600;
+	letter-spacing: 1px;
+	height: 20px;
 }
 
 .affiliation {
@@ -158,10 +202,12 @@
 	text-align: center;
 	bottom: -7px;
 	font-size: 12px;
-	padding: 4px 0 10px;
+	padding: 6px 0 10px;
 	color: white;
-	right: 0;
+	right: 1px;
 	background-color: black;
+	text-transform: lowercase;
+	font-variant: small-caps;
 }
 
 .rarity {
@@ -245,6 +291,7 @@
 	border-radius: 4px;
 	margin: 1px;
 	padding-top: 2px;
+	min-height: 24px;
 }
 
 .diecost {
@@ -299,6 +346,8 @@ svg {
 	text-align: center;
 	opacity: 1;
 	font-weight: 300;
+	word-spacing: 5px;
+	letter-spacing: 0.5px;
 }
 
 .text {
@@ -319,18 +368,25 @@ svg {
 }
 
 .upgrade .illustration{
-	background-position: 20px 20px;
-	top: -25px;
+	background-position: 15px 13px;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
 }
 
 .upgrade .title{
-	top: 219px;
+	top: 223px;
 	opacity: 1;
-	border-radius: 10/50%;
-	line-height: 18px;
-	max-height: 35px;
+	max-height: 36px;
 	padding-top: 5px;
 	padding-bottom: 2px;
+	max-width: 149px;
+	left: 72px;
+}
+
+.upgrade .type {
+	top: 274px;
+	left: 57px;
 }
 
 .upgrade .points {
@@ -340,18 +396,27 @@ svg {
 .upgrade .die {
 	bottom: 4px;
 }
+.false {
+	left: 38px !important;
+	width: 222px !important;
+}
+.upgrade .text {
+	left: 60px;
+	width: 200px;
+}
 
 .event .die, .event .points, .event .health {
 	display: none;
 }
 
 .event .illustration {
-	background-position: 6px 12px;
+	background-position: 0 5px;
 	width: 310px;
 	height: 310px;
 	border-radius: 50%;
 	top: -16px;
 	right: -9px;
+	background-size: 100%;
 }
 
 .event .type {
@@ -360,26 +425,15 @@ svg {
 }
 
 .event .text {
-	width: 250px;
-	background-color: white;
-	border-radius: 50% 50% 0 0;
-	border-style: ridge;
-	padding: 43px 70px 60px;
-	left: -48px;
-	top: 275px;
-	border-top-width: 4px;
-	border-top-color: black;
+	left: 15px;
+	width: 270px;
+	top: 323px;
 }
 
 .event .title{
-	top: 235px;
-	opacity: 1;
-	border-radius: 10/50%;
-	line-height: 18px;
+	top: 241px;
 	max-height: 35px;
-	padding: 13px;
-	left: 51px;
-	min-width: 159px;
+	left: 71px;
 }
 
 .artist {
@@ -396,36 +450,33 @@ svg {
 }
 
 .battlefield .illustration {
-	border-radius: 10 20 0 0;
 	box-shadow: none;
 	-moz-box-shadow: none;
-	top: 7px;
-	right: 25px;
+	border-radius: 0;
 	bottom: 0;
 	width: 389px;
-	height: 191px;
-	background-position: 0 -9px;
-	z-index: 1;
-	border-width: 4px;
+	height: 210px;
+	right: auto;
+	left: 0;
+	border-style: none;
+	background-position: -1px 11px;
 }
 
 .battlefield .title {
-	top: 9px;
-	max-height: 28px;
-	padding-bottom: 12px;
-	left: 122px;
-	min-width: 169px;
-	padding-top: 8px;
+	top: 23px;
+	left: 132px;
+}
+
+.battlefield .rarity {
+	border-radius: 5px;
+	background-color: white;
+	padding: 3px 4px 0 5px;
+	bottom: 0;
 }
 
 .battlefield .text {
-	top: 194px;
-	background-color: white;
-	border: 4px ridge gray;
-	padding: 20px 20px 17px;
-	z-index: 0;
-	border-radius: 0 0 20 20;
-	width: 288px;
+	top: 206px;
+	min-width: 330px;
 }
 
 .support .points, .support .health {
@@ -439,17 +490,52 @@ svg {
 }
 
 .support .title {
-	border-radius: 50 50 50 50;
-	padding: 16px 11px 14px 16px;
-	top: 14px;
-	left: 53px;
+	top: 17px;
+	left: 59px;
+	width: 175px;
+	height: 56px;
+	padding-top: 11px;
 }
 
 .support .text {
-	left: 31px;
+	left: 33px;
 	width: 230px;
 }
 
 .support .cost {
 	z-index: 2;
+}
+
+
+@media print {
+	#cards {
+
+	}
+	.card {
+		page-break-inside: avoid;
+		transform: scale(0.746);
+		box-shadow: none;
+		border: 1px dashed black;
+		margin: -7% -6% -8% -5%;
+	}
+	.battlefield {
+		transform: rotate(90deg);
+		position: relative;
+		top: 42px;
+		right: 42px;
+		margin-right: -84px;
+		margin-bottom: 80px;
+	}
+	
+	form {
+		display: none;
+	}
+}
+
+@page
+{
+    size: A4;   /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 0mm 0mm 0mm 0mm;
 }
