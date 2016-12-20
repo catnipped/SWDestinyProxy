@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700|Teko:300,400,500,600,700');
 body {
-	font-family: Roboto;
+	font: 14px Roboto;
 	font-weight: 400;
 }
 .card {
@@ -174,7 +174,7 @@ body {
 	border-left-style: none;
 	padding-left: 2px;
 	padding-bottom: 0;
-	font-family: teko;
+	font: 16px teko;
 	font-weight: 600;
 	letter-spacing: 1px;
 	height: 20px;
