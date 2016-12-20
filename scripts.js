@@ -2,19 +2,48 @@ var carddata = new Object();
 var cardid = ""
 var cardurl = ""
 
+ {
+};
+
+function fetchCardData(id) {
+	$.ajax({
+	    url:'cards.json',
+	    type:'HEAD',
+	    async: false,
+	    error: function() {
+       cardidwithzeroes = ("00" + cardid).slice(-3);
+       cardurl = "http://swdestinydb.com/api/public/card/01" + cardidwithzeroes;
+       
+	     	$.ajax({
+	     		url: cardurl,
+	     		async: false,
+	     		dataType: 'json',
+	     		success: function(data) {
+	     			console.log('loading swdestinydb')
+	     			carddata = data;
+	     		}
+	     	});	    
+	     },
+	    success: function() {
+	    	id = id - 1
+	    	$.ajax({
+	    			url: 'cards.json',
+	    			async: false,
+	    			dataType: 'json',
+	    			success: function(data) {
+	    				console.log('loading cards.json')
+	    				carddata = data[id];
+	    			}
+	    		});	   
+	      
+	    }
+	});
+			
+};
+
 function addCard () {
 	cardid = $('[name = cardid]').val()
-	cardidwithzeroes = ("00" + cardid).slice(-3);
-	cardurl = "http://swdestinydb.com/api/public/card/01" + cardidwithzeroes;
-
-	$.ajax({
-		url: cardurl,
-		async: false,
-		dataType: 'json',
-		success: function(data) {
-				carddata = data;
-		}
-	});
+	fetchCardData(cardid);
 
 	console.log(carddata);
 	var uniqueness = ' ';
