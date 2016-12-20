@@ -508,23 +508,20 @@ svg {
 
 
 @media print {
-	#cards {
 
-	}
 	.card {
 		page-break-inside: avoid;
 		transform: scale(0.746);
 		box-shadow: none;
 		border: 1px dashed black;
-		margin: -7% -6% -8% -5%;
+		margin: -56px -39px -52px;
 	}
 	.battlefield {
-		transform: rotate(90deg);
+		transform: scale(0.746) rotate(90deg);
 		position: relative;
-		top: 42px;
-		right: 42px;
-		margin-right: -84px;
-		margin-bottom: 80px;
+		top: 60px;
+		margin-left: -98px;
+		margin-right: -98px;
 	}
 	
 	form {
