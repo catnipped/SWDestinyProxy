@@ -19,6 +19,10 @@ body {
 	z-index: -1;
 }
 
+form {
+	max-width: 500px;
+}
+
 .template {
 	position: absolute;
 	top: 0;
