@@ -151,6 +151,7 @@ body {
 
 .title.oneline {
 	line-height: 37px;
+	white-space: nowrap;
 
 }
 
@@ -204,14 +205,14 @@ body {
 	font-size: 12px;
 	padding: 6px 0 10px;
 	color: white;
-	right: 1px;
+	right: -5px;
 	background-color: black;
 	text-transform: lowercase;
 	font-variant: small-caps;
 }
 
 .rarity {
-	position: absolute;
+/*	position: absolute;
 	text-align: right;
 	bottom: -10px;
 	font: 13px teko;
@@ -219,7 +220,19 @@ body {
 	padding: 4px 0 10px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	right: 51px;
+	right: 51px;*/
+	display: none;
+}
+
+.artist {
+	position: absolute;
+	text-align: right;
+	bottom: -10px;
+	font: 13px teko;
+	border-width: 2px;
+	padding: 4px 0 10px;
+	text-transform: uppercase;
+	right: 44px;
 }
 
 .red .color {
@@ -291,7 +304,7 @@ body {
 	border-radius: 4px;
 	margin: 1px;
 	padding-top: 2px;
-	min-height: 24px;
+	min-height: 25px;
 }
 
 .diecost {
@@ -396,7 +409,7 @@ svg {
 .upgrade .die {
 	bottom: 4px;
 }
-.false {
+.upgrade .false {
 	left: 38px !important;
 	width: 222px !important;
 }
@@ -427,7 +440,7 @@ svg {
 .event .text {
 	left: 15px;
 	width: 270px;
-	top: 323px;
+	top: 315px;
 }
 
 .event .title{
@@ -436,9 +449,9 @@ svg {
 	left: 71px;
 }
 
-.artist {
+/*.artist {
 	display: none;
-}
+}*/
 
 .battlefield {
 	width: 419px;
@@ -490,11 +503,9 @@ svg {
 }
 
 .support .title {
-	top: 17px;
-	left: 59px;
-	width: 175px;
+	top: 28px;
+	left: 71px;
 	height: 56px;
-	padding-top: 11px;
 }
 
 .support .text {
