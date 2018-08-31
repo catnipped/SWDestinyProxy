@@ -1,18 +1,18 @@
 var carddata = new Object();
 var cardid = ""
 var cardurl = ""
+var setcode = ""
 
  {
 };
-
-function fetchCardData(id) {
+function fetchCardData(id,code) {
 	$.ajax({
 	    url:'cards.json',
 	    type:'HEAD',
 	    async: false,
 	    error: function() {
        cardidwithzeroes = ("00" + cardid).slice(-3);
-       cardurl = "http://swdestinydb.com/api/public/card/01" + cardidwithzeroes;
+       cardurl = "http://swdestinydb.com/api/public/card/" + code + cardidwithzeroes;
        
 	     	$.ajax({
 	     		url: cardurl,
@@ -25,7 +25,7 @@ function fetchCardData(id) {
 	     	});	    
 	     },
 	    success: function() {
-	    	id = id - 1
+				id = id - 1
 	    	$.ajax({
 	    			url: 'cards.json',
 	    			async: false,
@@ -43,7 +43,8 @@ function fetchCardData(id) {
 
 function addCard () {
 	cardid = $('[name = cardid]').val()
-	fetchCardData(cardid);
+	setcode = $('[name = setcode]').val()
+	fetchCardData(cardid,setcode);
 
 	console.log(carddata);
 	var uniqueness = ' ';
@@ -112,4 +113,3 @@ function replaceInlineSymbol () {
       
   });
 }
-
