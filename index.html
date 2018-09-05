@@ -7,19 +7,24 @@
  </header>
  <body>
  	<form>
- 	<h1 style="font-family: teko; font-weight: 300;">SW Destiny Proxy Maker</h1>
- 	
- 	<b>About</b><br/>
- 	I made this proxy generator for people who want to try out cards from SW Destiny before buying them.<br/>This open-source project was made by <a href="https://twitter.com/ossianboren" target="_blank">@ossianboren</a> (<a href="https://github.com/catnipped/SWDestinyProxy" target="_blank" >github link</a>) using an API from <a href="http://swdestinydb.com">swdestinydb.com</a>.<br/>
+ 	<span>I made this proxy generator for people who want to try out cards from SW Destiny before buying them.<br/>
  		<br/>
- 		<b>Instructions</b><br/>
+ 		Instructions:<br/>
  		Add cards by their ID number. Then print from your browser (they should be neatly gridded for cutting).<br/>
  		<br/>
- 		<b>Custom Database</b><br/>
- 		If you <a href="SWDestinyProxy.zip">download this page</a>, you can provide your own database! Just get the cards.json from <a href="http://swdestinydb.com/api/public/cards/">here</a>, put it in the SWDestinyProxy folder, then change cards.json however you like! (Translations, custom cards, etc)<br/>
+ 		made by <a href="https://twitter.com/ossianboren" target="_blank">@ossianboren</a> (<a href="https://github.com/catnipped/SWDestinyProxy" target="_blank" >github link</a>)</span>
  		<br/>	<br/>
  		<span>card id :</span>
- 		<input type="number" name="cardid" value="1" min="1">
+		 <input type="number" name="cardid" value="1" min="1">
+		 <select name=setcode>
+			<option value="01">Awakenings</option>
+			<option value="02">Spirit of Rebellion</option>
+			<option value="03">Empire at War</option>
+			<option value="04">Two-Player Game</option>
+			<option value="05">Legacies</option>
+			<option value="06">Rivals</option>
+			<option value="07">Way of the Force</option>
+		 </select>
  		<a href="#" onclick="addCard()">add card</a>
  	</form>
  	<div id="cards"></div>
